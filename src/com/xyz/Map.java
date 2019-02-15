@@ -7,7 +7,7 @@ public class Map extends Class2 {
 	  Map m=new Map();
 	 // java.util.Scanner s=new java.util.Scanner(System.in);
 	  System.out.println(c.a);
-	  
+	  System.out.println("Hello");
 	  c.display();
 	  System.out.println(m.num1);
   }
