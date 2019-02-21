@@ -1,32 +1,39 @@
 package programs;
 
-import java.util.Scanner;
-
 public class CaesorCypher {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Scanner sc=new Scanner(System.in);
-		 String s=sc.nextLine();
-		System.out.println("Enter code");
-		int n=sc.nextInt();
-		 encrypt(s,n);
-		 decrypt(s,n);
+		decrypt(encrypt("Hello-World-Java",3),3);
 	}
 
-	private static void decrypt(String s, int n) {
+	private static void decrypt(StringBuilder encryptMsg, int n) {
 		// TODO Auto-generated method stub
+		String msg=encryptMsg.toString();
+		char[] letters = msg.toCharArray();
 		
+		StringBuilder decryptedMsg = new StringBuilder();
 		
+		for (int i = 0; i < letters.length; i++) {
+			decryptedMsg.append((char) (byte) (letters[i] - n));
+		}
+		System.out.println(decryptedMsg);
 		
 	}
 
 	
 
-	private static void encrypt(String s, int n) {
+	private static StringBuilder encrypt(String s, int n) {
 		// TODO Auto-generated method stub
+		StringBuilder encryptMsg=new StringBuilder();
 		
+		char[] letters = s.toCharArray();
+		
+		for (int i = 0; i < letters.length; i++) {
+			encryptMsg.append((char) (byte) (letters[i] + n));
+		}
+		return encryptMsg;
 	}
 
 }
